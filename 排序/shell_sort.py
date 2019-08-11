@@ -16,9 +16,9 @@ def shell_sorted(array, k):
                 else:
                     break
         gap //= 2
-    return array
 
 
 if __name__ == '__main__':
     arr0 = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-    print(shell_sorted(arr0, 8))
+    shell_sorted(arr0, 8)
+    print(arr0)

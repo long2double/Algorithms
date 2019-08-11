@@ -14,7 +14,6 @@ def select_sorted(array):
             if array[j] < array[min]:
                 min = j
         array[min], array[i] = array[i], array[min]
-    return array
 
 
 def select_sorted_k(array, k):
@@ -28,7 +27,11 @@ def select_sorted_k(array, k):
         if i == k - 1:
             return array[i]
 
+
 if __name__ == '__main__':
     arr0 = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-    print(select_sorted(arr0))
-    print(select_sorted_k(arr0, 9))
+    select_sorted(arr0)
+    print(arr0)
+
+    arr1 = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+    print(select_sorted_k(arr1, 4))

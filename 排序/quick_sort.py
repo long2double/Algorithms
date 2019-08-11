@@ -24,11 +24,12 @@ def quick_sorted(array, start, end):
 
     array[low] = mid  # 当low=high时退出循环，middle给low值
     quick_sorted(array, start, low - 1)  # 小于middle的值，进行比较
-    return quick_sorted(array, low + 1, end)  # 大于middle的值，进行比较
+    quick_sorted(array, low + 1, end)  # 大于middle的值，进行比较
 
 
 if __name__ == '__main__':
     arr0 = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-    print(quick_sorted(arr0, 0, len(arr0) - 1))
+    quick_sorted(arr0, 0, len(arr0) - 1)
+    print(arr0)
 
 

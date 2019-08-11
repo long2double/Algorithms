@@ -15,9 +15,9 @@ def insert_sorted(array):
                 array[j], array[j - 1] = array[j - 1], array[j]
             else:
                 break
-    return array
 
 
 if __name__ == '__main__':
     arr0 = [54, 26, 93, 17, 77, 31, 44, 55, 20]
-    print(insert_sorted(arr0))
+    insert_sorted(arr0)
+    print(arr0)
