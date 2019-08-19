@@ -11,7 +11,7 @@ def select_sorted(array):
     for i in range(length - 1):
         min = i
         for j in range(i + 1, length):
-            if array[j] < array[min]:
+            if array[j] < array[min]:  # 每一次与最小值进行比较
                 min = j
         array[min], array[i] = array[i], array[min]
 
