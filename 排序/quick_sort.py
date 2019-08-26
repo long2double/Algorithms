@@ -14,7 +14,7 @@ def quick_sorted(array, start, end):
     low = start
     high = end
     while low < high:  # 只用low<high才进行循环
-        while low < high and array[high] > mid:  # high值大于中间值，high向左移动
+        while low < high and array[high] >= mid:  # high值大于中间值，high向左移动
             high -= 1
         array[low] = array[high]  # 否则，high值给low值
 
@@ -28,7 +28,7 @@ def quick_sorted(array, start, end):
 
 
 if __name__ == '__main__':
-    arr0 = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+    arr0 = [54, 26, 93, 17, 77, 26, 31, 44, 55, 20]
     quick_sorted(arr0, 0, len(arr0) - 1)
     print(arr0)
 
