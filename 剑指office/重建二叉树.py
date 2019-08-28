@@ -6,49 +6,21 @@
 
 
 # -*- coding:utf-8 -*-
-class Stack:
-    def __init__(self):
-        self.stack = []
-
-    def length(self):
-        return len(self.stack)
-
-    def is_empty(self):
-        return self.length() == 0
-
-    def push(self, item):
-        self.stack.append(item)
-
-    def pop(self):
-        if self.is_empty():
-            return
-        else:
-            return self.stack.pop()
-
-    def peek(self):
-        if self.is_empty():
-            return
-        else:
-            return self.stack[-1]
+class TNode:
+    def __init__(self, x=None):
+        self.val = x
+        self.lchild = None
+        self.rchild = None
 
 
 class Solution:
-    def __init__(self):
-        self.enqueue = Stack()
-        self.dequeue = Stack()
-
-    def push(self, node):
-        # write code here
-        self.enqueue.push(node)
-
-    def pop(self):
-        # return xx
-        if self.enqueue.is_empty() and self.dequeue.is_empty():
+    def reConstruce(self, pre, tin):
+        if pre is None or tin == []:
             return
-        if self.dequeue.is_empty():
-            while not self.enqueue.is_empty():
-                self.dequeue.push(self.enqueue.pop())
-            return self.dequeue.pop()
-        else:
-            return self.dequeue.pop()
+
+        node = TNode(pre.pop(0))
+        index = tin.index(node.val)
+        node.lchild = self.reConstruce(pre, tin[:index])
+        node.rchild = self.reConstruce(pre, tin[index + 1:])
+        return node
 
