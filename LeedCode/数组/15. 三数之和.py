@@ -13,36 +13,31 @@
 
 class Solution:
     def threeSum(self, nums):
-        nums.sort()
         res = []
-        length = len(nums)
+        if nums == []:
+            return []
+        nums.sort()
 
-        for k in range(length - 2):
-            if nums[k] > 0:
+        length = len(nums)
+        for a in range(length - 2):
+            if nums[a] > 0:
                 break
-            if k > 0 and nums[k] == nums[k - 1]:
+            if a > 0 and nums[a] == nums[a - 1]:
                 continue
 
-            i, j = k + 1, length - 1
-            while i < j:
-                s = nums[k] + nums[j] + nums[i]
-                if s < 0:
-                    i += 1
-                    while i < j and nums[i] == nums[i - 1]:
-                        i += 1
-                elif s > 0:
-                    j -= 1
-                    while i < j and nums[j] == nums[j + 1]:
-                        j -= 1
+            new_tar = 0 - nums[a]
+            b, c = a + 1, length - 1
+            while b < c:
+                if nums[b] + nums[c] == new_tar:
+                    res.append([nums[a], nums[b], nums[c]])
+                    while b < c and nums[b] == nums[b + 1]:
+                        b += 1
+                    while b < c and nums[c] == nums[c - 1]:
+                        c -= 1
+                    b += 1
+                    c -= 1
+                elif nums[b] + nums[c] < new_tar:
+                    b += 1
                 else:
-                    res.append([nums[k], nums[i], nums[j]])
-                    i += 1
-                    j -= 1
-                    while i < j and nums[i] == nums[i - 1]:
-                        i += 1
-                    while i < j and nums[j] == nums[j + 1]:
-                        j -= 1
+                    c -= 1
         return res
-
-
-
