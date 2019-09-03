@@ -25,8 +25,7 @@ class Solution:
             self.path.append(root.val)
             if root.left is None and root.right is None and sum(self.path) == expectNumber:
                 self.result.append(self.path[:])
-            else:
-                self.FindPath(root.left, expectNumber)
-                self.FindPath(root.right, expectNumber)
+            self.FindPath(root.left, expectNumber)
+            self.FindPath(root.right, expectNumber)
             self.path.pop()
         return self.result

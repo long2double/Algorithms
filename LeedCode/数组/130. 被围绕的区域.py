@@ -30,7 +30,7 @@ class Solution:
                 return
             else:
                 queue.append((x, y))
-                board[x][y] = '#'
+                board[x][y] = '#'  # 作用一：标记已经走过了，作用二：最后遍历的时候，扣除边界
 
         def bfs(x, y):
             fill(x, y)
