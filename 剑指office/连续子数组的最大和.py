@@ -12,3 +12,9 @@ class Solution:
             if array[i - 1] > 0:
                 array[i] += array[i - 1]
         return max(array)
+
+
+if __name__ == '__main__':
+    a = [1, 2, -1, 3]
+    S = Solution()
+    print(S.FindGreatestSumOfSubArray(a))

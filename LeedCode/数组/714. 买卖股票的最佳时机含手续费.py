@@ -29,3 +29,25 @@ class Solution:
             max_without = max(max_without, prices[i] + max_with - fee)  # 当天卖不卖的最高利润
             max_with = max(max_with, max_without - prices[i])  # 当天买不买的最高利润
         return max_without
+
+
+# prices = list(map(int, input().split()))
+# length = len(prices)
+# if length < 2:
+#     print(0)
+# dp1 = [0] * length
+# dp2 = [0] * length
+# min_val = prices[0]
+# max_val = prices[-1]
+#
+# for i in range(1, length):
+#     dp1[i] = max(dp1[i - 1], prices[i] - min_val)
+#     min_val = min(min_val, prices[i])
+#
+# for i in range(length - 2, -1, -1):
+#     dp2[i] = max(dp2[i + 1], max_val - prices[i])
+#     max_val = max(max_val, prices[i])
+#
+# dp = [dp1[i] + dp2[i] for i in range(length)]
+# print(max(dp))
+
