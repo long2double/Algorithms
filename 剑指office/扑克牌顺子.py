@@ -14,15 +14,15 @@ class Solution:
         # write code here
         if numbers == []:
             return False
+
         numbers = sorted(numbers)
-        count_0 = numbers.count(0)
+        count = numbers.count(0)
         length = len(numbers) - 1
-        for i in range(length, count_0, -1):
+        for i in range(length, count, -1):
             if numbers[i] == numbers[i - 1]:
                 return False
             else:
-                count_0 = count_0 - (abs(numbers[i] - numbers[i - 1]) - 1)
-        if count_0 < 0:
-            return False
-        else:
-            return True
+                count = count - (numbers[i] - numbers[i - 1] - 1)
+                if count < 0:
+                    return False
+        return True

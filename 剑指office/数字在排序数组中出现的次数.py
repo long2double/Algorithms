@@ -18,7 +18,7 @@ class Solution:
                 begin = mid + 1
             elif data[mid] > k:
                 end = mid - 1
-            elif begin == mid or data[mid - 1] != k:
+            elif begin == mid or data[mid - 1] != k:  # mid == begin 防止溢出
                 first = mid
                 break
             else:
@@ -34,7 +34,7 @@ class Solution:
                 begin = mid + 1
             elif data[mid] > k:
                 end = mid - 1
-            elif mid == end or data[mid + 1] != k:
+            elif mid == end or data[mid + 1] != k:  # [1,2,3,3,3,3] mid == end防止溢出
                 second = mid
                 break
             else:

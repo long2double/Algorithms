@@ -20,12 +20,12 @@ class Solution:
             return False
 
         length = len(sequence)
-        for i in range(length):
-            if sequence[i] > sequence[length - 1]:
+        for i in range(length):  # 当[1]只有一个元素是length - 1会导致i没有定义
+            if sequence[i] > sequence[-1]:
                 break
 
         for j in range(i, length):
-            if sequence[j] < sequence[length - 1]:
+            if sequence[j] < sequence[-1]:
                 return False
 
         left = True

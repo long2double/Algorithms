@@ -23,24 +23,20 @@ class Solution:
         head = LNode()
         cur = head
         for i in range(n):
-            node = LNode(i)
-            cur.next = node
+            cur.next = LNode(i)
             cur = cur.next
         cur.next = head.next
 
-        # 注意第一次寻找第m个小朋友时，从head结点开始，后边的寻找不从头结点开始，count=1
-        cur = head
-        count = 0
-        while cur.next != cur:
-            for i in range(count, m):
+        cur = head.next
+        while cur != cur.next:
+            for i in range(m - 1):
                 pre = cur
                 cur = cur.next
-            if pre.next == head.next:
-                head.next = cur.next
-                pre.next = head.next
-                cur = cur.next
-            else:
+            if cur != head.next:
                 pre.next = cur.next
                 cur = cur.next
-            count = 1
+            else:
+                head.next = cur.next
+                pre.next = cur.next
+                cur = cur.next
         return cur.val

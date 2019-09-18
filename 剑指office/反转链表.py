@@ -15,9 +15,7 @@ class Solution:
     # 返回ListNode
     def ReverseList(self, pHead):
         # write code here
-        if pHead is None:
-            return
-        if pHead.next is None:
+        if pHead is None or pHead.next is None:
             return pHead
 
         head = ListNode(0)

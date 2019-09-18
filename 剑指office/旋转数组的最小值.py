@@ -21,7 +21,7 @@ class Solution:
     def findMin(self, rotateArray, low, high):
         if low > high:
             return 0
-        mid = (low + high) // 2
+        mid = low + (high - low) // 2
 
         if rotateArray[mid] > rotateArray[mid + 1]:
             return rotateArray[mid + 1]

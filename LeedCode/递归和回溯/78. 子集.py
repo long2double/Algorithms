@@ -41,3 +41,8 @@ class Solution:
         self.find_sub_sets(i + 1, nums, sub, res)
 
 
+if __name__ == '__main__':
+    S = Solution()
+    arr = [1, 2, 3, 4]
+    print(S.subsets(arr))
+
