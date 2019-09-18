@@ -31,7 +31,8 @@ class Solution:
         if root is None:
             return []
 
-        stack, ret = [], []
+        stack = []
+        res = []
         cur = root
         while stack or cur:
             if cur:
@@ -39,7 +40,7 @@ class Solution:
                 cur = cur.left
             else:
                 cur = stack.pop()
-                ret.append(cur.val)
+                res.append(cur.val)
                 cur = cur.right
-        return ret
+        return res
 

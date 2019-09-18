@@ -35,8 +35,8 @@ class Solution:
         while stack:
             cur_node = stack.pop()
             res.append(cur_node.val)
-            if cur_node.right:
+            if cur_node.right is not None:
                 stack.append(cur_node.right)
-            if cur_node.left:
+            if cur_node.left is not None:
                 stack.append(cur_node.left)
         return res
