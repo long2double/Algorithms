@@ -17,27 +17,12 @@ class Solution:
         # write code here
         if listNode is None:
             return []
-        if listNode.next is None:
-            return listNode
+        res = []
+        return self.ReverPrint(listNode, res)
 
-        head = ListNode(0)
-        head.next = listNode
-
-        cur = head.next.next
-        head.next.next = None
-        head.next.next = None
-
-        while cur.next is not None:
-            next = cur.next
-            cur.next = head.next
-            head.next = cur
-            cur = next
-
-        cur.next = head.next
-        head.next = cur
-
-        li = []
-        while head.next is not None:
-            head = head.next
-            li.append(head.val)
-        return li
+    def ReverPrint(self, root, res):
+        if root is None:
+            return []
+        self.ReverPrint(root.next, res)
+        res.append(root.val)
+        return res

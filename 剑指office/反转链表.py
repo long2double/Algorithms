@@ -24,11 +24,27 @@ class Solution:
         cur = head.next.next
         head.next.next = None
 
-        while cur.next is not None:
+        while cur is not None:
             next = cur.next
             cur.next = head.next
             head.next = cur
             cur = next
-        cur.next = head.next
-        head.next = cur
         return head.next
+
+
+class Solution:
+    # 返回ListNode
+    def ReverseList(self, pHead):
+        # write code here
+        if pHead is None or pHead.next is None:
+            return pHead
+
+        pre = pHead
+        cur = pHead.next
+        pre.next = None
+        while cur is not None:
+            next = cur.next
+            cur.next = pre
+            pre = cur
+            cur = next
+        return pre
