@@ -1,7 +1,7 @@
 # 堆通常指的是一颗完全二叉树
 def heap_sorted(array):
     length = len(array)
-    # 创建小根堆
+    # 创建堆
     for i in range((length - 1) // 2, -1, -1):
         adjust_heap(array, i, length)
         #print(array)  # 初始堆的情况
