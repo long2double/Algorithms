@@ -31,7 +31,7 @@ class Stack:
             return self.stack[-1]
 
 
-class Solution:
+class Solution_Stack:
     def __init__(self):
         self.enqueue = Stack()
         self.dequeue = Stack()
@@ -47,7 +47,7 @@ class Solution:
         if self.dequeue.is_empty():
             while not self.enqueue.is_empty():
                 self.dequeue.push(self.enqueue.pop())
-            return self.dequeue.pop()
-        else:
-            return self.dequeue.pop()
+        return self.dequeue.pop()
+
+
 
