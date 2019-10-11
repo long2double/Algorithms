@@ -28,7 +28,8 @@ def quick_sorted(array, start, end):
 
 
 if __name__ == '__main__':
-    arr0 = [54, 26, 93, 17, 77, 26, 31, 44, 55, 20]
+    arr0 = [54, 26, 93, 17, 77, 26, 31, 44, 55]
+    # arr0 = [1,8,3,0]
     quick_sorted(arr0, 0, len(arr0) - 1)
     print(arr0)
 
