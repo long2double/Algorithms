@@ -17,7 +17,7 @@ class Solution:
 
     def longestPalindrome(self, string):
         if string is None or string == []:
-            return string
+            return 0
 
         length = len(string)
         for i in range(length):

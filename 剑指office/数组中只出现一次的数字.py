@@ -45,9 +45,9 @@ class Solution:
         b = 0
         for i in array:
             if self.isBit(i, idx):
-                a = a ^ i
+                a ^= i
             else:
-                b = b ^ i
+                b ^= i
 
         return [a, b]
 
