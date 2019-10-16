@@ -1,13 +1,14 @@
-import numpy as np
-import torch
+import random
 
 
-a = np.array([[[1,2,3],[4,5,6]]])
+def shuffle(array):
+    for i in range(len(array)):
+        index = random.randint(0, len(array) - 1)
+        array.append(array.pop(index))
+    return array
 
-un = torch.tensor(a)
-print(un)
-# print(un.size())
-per = un.permute(2,0,1)
-print(per)
-print(per.shape)
-# print(per.size())
+
+if __name__ == '__main__':
+    a = [1, 2, 3, 4, 5]
+    shuffle(a)
+    print(a)

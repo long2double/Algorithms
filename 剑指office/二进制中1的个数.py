@@ -11,6 +11,10 @@ class Solution:
         """
         因为负数是以补码的形式存在的，python负数与0xffffffff按位与
         正好求得该负数的补码状态
+        bin(-1)
+        '-0b1'
+        bin(-1 & 0xffffffff)
+        '0b11111111111111111111111111111111'
         """
         if n < 0:
             n = n & 0xffffffff
@@ -21,3 +25,8 @@ class Solution:
             num += 1
         return num
         # return bin(n & 0xffffffff).count('1')
+
+
+if __name__ == '__main__':
+    S = Solution()
+    print(S.NumberOf1(-1))

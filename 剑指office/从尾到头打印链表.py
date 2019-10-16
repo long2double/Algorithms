@@ -13,16 +13,13 @@ class ListNode:
 
 class Solution:
     # 返回从尾部到头部的列表值序列，例如[1,2,3]
+    def __init__(self):
+        self.res = []
+
     def printListFromTailToHead(self, listNode):
         # write code here
         if listNode is None:
             return []
-        res = []
-        return self.ReverPrint(listNode, res)
-
-    def ReverPrint(self, root, res):
-        if root is None:
-            return []
-        self.ReverPrint(root.next, res)
-        res.append(root.val)
-        return res
+        self.printListFromTailToHead(listNode.next)
+        self.res.append(listNode.val)
+        return self.res
