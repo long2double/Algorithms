@@ -8,7 +8,9 @@
 class Solution:
     def rectCover(self, number):
         # write code here
-        res = [0, 1, 2]
-        while len(res) <= number:
-            res.append(res[-1] + res[-2])
-        return res[number] 
+        if number == 0:
+            return 0
+        a, b = 1, 1
+        for i in range(number):
+            a, b = b, a + b
+        return a

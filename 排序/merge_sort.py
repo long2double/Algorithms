@@ -8,7 +8,7 @@ def merger_sorted(array):
     稳定
     """
     n = len(array)
-    if n <= 1:
+    if n <= 1:  # ***********
         return array
 
     mid = n // 2

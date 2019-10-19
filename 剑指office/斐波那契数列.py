@@ -9,18 +9,21 @@ n<=39
 class Solution:
     def Fibonacci(self, n):
         # write code here
-        # if n == 0:
-            # return 0
-        # if n == 1:
-            # return 1
-        # return self.Fibonacci(n - 1) + self.Fibonacci(n - 2)
         if n == 0:
             return 0
         if n == 1:
             return 1
-        i = 0
-        j = 1
-        while n > 1:
-            i, j = j, i + j
-            n -= 1
-        return j
+        return self.Fibonacci(n - 1) + self.Fibonacci(n - 2)
+
+
+# -*- coding:utf-8 -*-
+class Solution:
+    def Fibonacci(self, n):
+        # write code here
+        a = 0
+        b = 1
+        for i in range(n):
+            a, b = b, a + b
+        return a
+
+
