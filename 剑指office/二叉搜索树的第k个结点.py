@@ -12,26 +12,26 @@ class TreeNode:
         self.right = None
 
 
-class Solution:
-    # 返回对应节点TreeNode
-    def __init__(self):
-        self.res = []
-
-    def KthNode(self, pRoot, k):
-        # write code here
-        if pRoot is None:
-            return
-
-        self.mid_order(pRoot)
-        if 0 < k <= len(self.res):
-            return self.res[k - 1]
-
-    def mid_order(self, pRoot):
-        if pRoot is None:
-            return
-        self.mid_order(pRoot.left)
-        self.res.append(pRoot)
-        self.mid_order(pRoot.right)
+# class Solution:
+#     # 返回对应节点TreeNode
+#     def __init__(self):
+#         self.res = []
+#
+#     def KthNode(self, pRoot, k):
+#         # write code here
+#         if pRoot is None:
+#             return
+#
+#         self.mid_order(pRoot)
+#         if 0 < k <= len(self.res):
+#             return self.res[k - 1]
+#
+#     def mid_order(self, pRoot):
+#         if pRoot is None:
+#             return
+#         self.mid_order(pRoot.left)
+#         self.res.append(pRoot)
+#         self.mid_order(pRoot.right)
 
 
 class Solution:

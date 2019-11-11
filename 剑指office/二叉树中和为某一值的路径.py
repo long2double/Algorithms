@@ -17,15 +17,17 @@ class Solution:
     # 返回二维列表，内部每个列表表示找到的路径
     def __init__(self):
         self.path = []
-        self.result = []
+        self.res = []
 
     def FindPath(self, root, expectNumber):
         # write code here
-        if root is not None:
-            self.path.append(root.val)
-            if root.left is None and root.right is None and sum(self.path) == expectNumber:
-                self.result.append(self.path[:])
-            self.FindPath(root.left, expectNumber)
-            self.FindPath(root.right, expectNumber)
-            self.path.pop()
-        return self.result
+        if root is None:
+            return []
+
+        self.path.append(root.val)
+        if root.left is None and root.right is None and sum(self.path) == expectNumber:
+            self.res.append(self.path[:])
+        self.FindPath(root.left, expectNumber)
+        self.FindPath(root.right, expectNumber)
+        self.path.pop()
+        return self.res

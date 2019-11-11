@@ -12,6 +12,8 @@ class TreeLinkNode:
         self.left = None
         self.right = None
         self.next = None
+
+
 class Solution:
     def GetNext(self, pNode):
         # write code here

@@ -37,6 +37,15 @@ class Solution:
         return left and right
         """
 
+
+        """
+             4
+          /     \        
+         2       10
+        /  \    /  \ 
+       1    3  7    11
+       后续遍历：1，3， 2， 7， 11， 10， 4
+       """
         length = len(sequence)
         if length == 0:
             return False

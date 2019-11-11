@@ -33,7 +33,7 @@ class Solution:
         # write code here
         if root is None:
             return
-        self.Mirror(root.right)
         self.Mirror(root.left)
+        self.Mirror(root.right)
         root.left, root.right = root.right, root.left
         return root

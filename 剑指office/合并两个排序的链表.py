@@ -20,12 +20,11 @@ class Solution:
         while pHead1 is not None and pHead2 is not None:
             if pHead1.val <= pHead2.val:
                 cur.next = pHead1
-                cur = cur.next
                 pHead1 = pHead1.next
             else:
                 cur.next = pHead2
-                cur = cur.next
                 pHead2 = pHead2.next
+            cur = cur.next
 
         if pHead1 is not None:
             cur.next = pHead1
